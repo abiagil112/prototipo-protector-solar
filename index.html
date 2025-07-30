@@ -17,6 +17,20 @@
             padding: 10px 0;
             text-align: center;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
         section {
             padding: 20px;
             margin: 10px;
@@ -48,47 +62,85 @@
             bottom: 0;
             width: 100%;
         }
+        .testimonios {
+            list-style-type: none;
+            padding: 0;
+        }
+        .testimonio {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Confianza en el Uso del Protector Solar</h1>
     </header>
-    <section>
-        <h2>Bienvenido a Nuestro Programa</h2>
-        <p>Este programa está diseñado para generar confianza en el uso del protector solar a través de la educación, la transparencia y la participación comunitaria.</p>
-    </section>
-    <section>
-        <h2>Educación y Transparencia</h2>
+    <nav>
+        <a href="#educacion">Educación</a>
+        <a href="#productos">Productos</a>
+        <a href="#tecnologia">Tecnología</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#comentarios">Comentarios</a>
+        <a href="#consejos">Consejos</a>
+    </nav>
+    <section id="educacion">
+        <h2>1. Educación y Transparencia</h2>
         <ul>
-            <li>Infografías sobre ingredientes y su función.</li>
-            <li>Talleres gratuitos sobre fotoprotección.</li>
-            <li>Sesiones de preguntas y respuestas con expertos.</li>
+            <li>Infografías y Manuales Educativos.</li>
+            <li>Talleres y Charlas Informativas.</li>
+            <li>Sesiones de Preguntas y Respuestas.</li>
         </ul>
     </section>
-    <section>
-        <h2>Productos Naturales y Sostenibles</h2>
-        <p>Ofrecemos una línea de protectores solares ecológicos y certificados, con ingredientes seguros y transparentes.</p>
+    <section id="productos">
+        <h2>2. Productos Naturales y Sostenibles</h2>
+        <p>Desarrollamos una línea de protectores solares veganos y orgánicos, con información clara sobre los ingredientes.</p>
     </section>
-    <section>
-        <h2>Herramientas Digitales</h2>
+    <section id="tecnologia">
+        <h2>3. Tecnología y Herramientas Digitales</h2>
         <ul>
-            <li>App para escanear ingredientes.</li>
-            <li>Simulador UV para mostrar el daño solar.</li>
-            <li>Realidad aumentada para visualizar la aplicación correcta.</li>
+            <li>Aplicaciones Educativas para escanear ingredientes.</li>
+            <li>Simulador UV y Realidad Aumentada.</li>
         </ul>
     </section>
-    <section>
-        <h2>Participación de Profesionales</h2>
-        <p>Colaboramos con dermatólogos para ofrecer consultas y certificaciones que respalden nuestros productos.</p>
+    <section id="testimonios">
+        <h2>4. Historias de Usuarios</h2>
+        <ul class="testimonios">
+            <li class="testimonio">"Desde que uso este protector solar, mi piel se siente más saludable." - Ana</li>
+            <li class="testimonio">"Me encanta que sean productos ecológicos y seguros." - Luis</li>
+        </ul>
     </section>
-    <section>
-        <h2>Historias y Testimonios</h2>
-        <p>Comparte tus experiencias y lee testimonios de otros usuarios que han mejorado su salud de la piel.</p>
-        <a href="#testimonios" class="button">Ver Testimonios</a>
+    <section id="comentarios">
+        <h2>5. Comparte tu Experiencia</h2>
+        <form id="comentarioForm">
+            <textarea id="comentario" rows="4" cols="50" placeholder="Escribe tu comentario aquí..."></textarea><br>
+            <button type="button" class="button" onclick="agregarComentario()">Enviar Comentario</button>
+        </form>
+        <h3>Comentarios Recientes:</h3>
+        <ul id="listaComentarios"></ul>
+    </section>
+    <section id="consejos">
+        <h2>6. Consejos para el Cuidado Solar</h2>
+        <ul>
+            <li>Aplica el protector solar 30 minutos antes de salir al sol.</li>
+            <li>Reaplica cada 2 horas y después de nadar.</li>
+            <li>Usa ropa protectora y busca sombra cuando sea posible.</li>
+        </ul>
     </section>
     <footer>
         <p>&copy; 2025 Confianza en el Protector Solar. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        function agregarComentario() {
+            const comentarioInput = document.getElementById('comentario');
+            const listaComentarios = document.getElementById('listaComentarios');
+            const nuevoComentario = document.createElement('li');
+            nuevoComentario.textContent = comentarioInput.value;
+            listaComentarios.appendChild(nuevoComentario);
+            comentarioInput.value = ''; // Limpiar el campo de texto
+        }
+    </script>
 </body>
 </html>
